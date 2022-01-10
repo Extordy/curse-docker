@@ -1,3 +1,4 @@
+#as "nombre" es para asignarle un nombre y utilizarlo en otra parte del archivo de configuracion 
 FROM node:12 as builder
 
 COPY ["package.json", "package-lock.json", "/usr/src/"]

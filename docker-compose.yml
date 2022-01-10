@@ -1,14 +1,25 @@
 version: "3.8"
-
+#se respetan los espaciados
+#maneja servisios docker composer
 services:
   app:
     image: platziapp
+    #build: .
     environment:
       MONGO_URL: "mongodb://db:27017/test"
     depends_on:
       - db
     ports:
-      - "3000:3000"
+      #- "3000:3000"
+      #rango de puestos
+      - "3000-3001:3000"
+    #volumenes para que se reflejen los ambios al instante
+    #volumes:
+    #  - .:/usr/src
+    #no montar nada en esta ruta
+    #  - /usr/src/node_modules 
+    #comando para node que este pendiente de cambios 
+    #command: npx nodemon index.js
 
   db:
     image: mongo

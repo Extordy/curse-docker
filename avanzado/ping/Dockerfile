@@ -1,3 +1,5 @@
 FROM ubuntu:trusty
-CMD ["/bin/ping", "-c", "3", "localhost"]
+#3ntrypoint comando que se ejecurara primero 
+ENTRYPOINT ["/bin/ping", "-c", "3"]
+CMD ["localhost"]
 
